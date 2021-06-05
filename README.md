@@ -7,6 +7,16 @@ Thanks to [@internetztube](https://github.com/internetztube) who gave me this id
 
 ## How to run this?
 
+### CLI Tool
+
+Example CLI command:
+
+```
+ooe-impf-alert-linux-amd64 --authorities=-400017 --date=2021-06-30 --ifttt-event-name=slot_found
+```
+
+Explanations for all the parameters for this call are directly below!
+
 ### Configuration
 
 #### Vaccination authority
