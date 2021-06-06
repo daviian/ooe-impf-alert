@@ -33,12 +33,12 @@ func getCovidVaccinationSlots(authority int) ([]slot, error) {
 // startDate of slots doesn't follow the ISO 8601 definition so we need to parse the dates by ourselves.
 func parseSlots(jsonSlots []map[string]interface{}) ([]slot, error) {
 	slots := make([]slot, len(jsonSlots))
-	for _, jsonSlot := range jsonSlots {
+	for i, jsonSlot := range jsonSlots {
 		startDate, err := time.ParseInLocation("2006-01-02T15:04:05", jsonSlot["startDate"].(string), time.Local)
 		if err != nil {
 			return nil, fmt.Errorf("parse time failed: %w", err)
 		}
-		slots = append(slots, slot{startDate})
+		slots[i] = slot{startDate}
 	}
 	return slots, nil
 }
